@@ -1,9 +1,14 @@
 import * as React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, match } from 'react-router-dom';
 import SelectedChannel from './SelectedChannel';
 import TeamSidebar from './TeamSidebar';
+import { ITeam } from '../../types';
 
-const Team: React.FC<any> = ({ team }) => {
+type ChannelRouteProps = {
+  match: match<{ channelId: string }>;
+};
+
+const Team: React.FC<{ team: ITeam }> = ({ team }) => {
   console.log(
     `%c TEAM render: ${team.name}`,
     'background-color: blue; color: white',
@@ -19,7 +24,7 @@ const Team: React.FC<any> = ({ team }) => {
         <Route
           exact
           path={`/team/${team.id}/channel/:channelId`}
-          children={({ match }) => (
+          children={({ match }: ChannelRouteProps) => (
             <SelectedChannel match={match} channels={channels} />
           )}
         />

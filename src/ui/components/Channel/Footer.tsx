@@ -1,6 +1,7 @@
 import * as React from 'react';
+import { IChannel } from '../../../types';
 
-const Footer: React.FC<any> = ({
+const Footer: React.FC<{ channel: IChannel }> = ({
   channel: { name: channelName },
 }) => (
   <footer className="pb-6 px-4 flex-none channel-footer">

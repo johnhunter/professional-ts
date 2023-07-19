@@ -1,9 +1,10 @@
 import * as React from 'react';
 import TeamLink from './TeamSelector/TeamLink';
+import { ITeam } from '../../types';
 
-const TeamSelector: React.FC<any> = ({ teams }) => (
+const TeamSelector: React.FC<{ teams: ITeam[] }> = ({ teams }) => (
   <nav className="team-selector bg-indigo-900 border-indigo-900 border-r-2 pt-2 text-purple-300 flex-none block">
-    {teams.map((team: any) => {
+    {teams.map((team) => {
       const { id, ...rest } = team;
       return <TeamLink team={team} key={id} {...rest} />;
     })}

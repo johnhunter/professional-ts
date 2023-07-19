@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const Loading: React.FC<any> = ({
+const Loading: React.FC<{ message: string }> = ({
   message = 'Loading...',
   children,
 }) => (

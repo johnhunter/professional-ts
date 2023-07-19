@@ -1,7 +1,11 @@
 import * as React from 'react';
 import { Link, useRouteMatch } from 'react-router-dom';
+import { IChannel } from '../../../types';
 
-const ChannelLink: React.FC<any> = ({ to, channel }) => {
+const ChannelLink: React.FC<{
+  to: string;
+  channel: IChannel;
+}> = ({ to, channel }) => {
   const match = useRouteMatch(to);
   return (
     <Link

@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { Link, useRouteMatch } from 'react-router-dom';
+import { ITeam } from '../../../types';
 
-const TeamLink: React.FC<any> = ({ team }) => {
+const TeamLink: React.FC<{ team: ITeam }> = ({ team }) => {
   const match = useRouteMatch({
     path: `/team/${team.id}`,
     exact: false,
@@ -19,7 +20,7 @@ const TeamLink: React.FC<any> = ({ team }) => {
         <img
           className="team-selector__team-logo"
           src={team.iconUrl}
-          alt={`Join the ${name} chat`}
+          alt={`Join the ${team.name} chat`}
         />
       </div>
     </Link>

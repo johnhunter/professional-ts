@@ -1,7 +1,8 @@
 import * as React from 'react';
 import ChannelLink from './TeamSidebar/ChannelLink';
+import { ITeam } from '../../types';
 
-const TeamSidebar: React.FC<any> = ({ team }) => {
+const TeamSidebar: React.FC<{ team: ITeam }> = ({ team }) => {
   return (
     <section className="team-sidebar h-full bg-indigo-800 text-purple-300 flex-none md:w-64 sm:w-48 pb-6 flex flex-col">
       <header className="team-sidebar__header text-white mb-2 mt-3 px-4 flex justify-between">
@@ -57,7 +58,7 @@ const TeamSidebar: React.FC<any> = ({ team }) => {
             </svg>
           </button>
         </div>
-        {team.channels.map((ch: any) => (
+        {team.channels.map((ch) => (
           <ChannelLink
             key={ch.id}
             to={`/team/${team.id}/channel/${ch.id}`}
