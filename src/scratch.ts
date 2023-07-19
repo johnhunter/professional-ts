@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 /// optional chaining and nullish coalescing
 
 let x: {
@@ -13,6 +15,7 @@ let x: {
 console.log(x.user.address?.city);
 
 class Foo {
+  //@ts-ignore
   #name;
   constructor(name?: string) {
     this.#name = name ?? '(no name)';
@@ -31,6 +34,7 @@ type Address = [
   state: string,
   postal: number,
 ];
+//@ts-ignore
 function printAddress(...address: Address) {}
 
 // @ts-expect-error

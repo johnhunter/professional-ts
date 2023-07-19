@@ -11,7 +11,9 @@
     "eslint:recommended",
     "prettier",
     "plugin:promise/recommended",
-    "plugin:sonarjs/recommended"
+    "plugin:sonarjs/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -46,11 +48,7 @@
         "react/prop-types": "off",
         "react/no-children-prop": "off"
       },
-      "extends": [
-        "eslint:recommended",
-        "plugin:react/recommended",
-        "prettier/react"
-      ]
+      "extends": ["eslint:recommended", "plugin:react/recommended"]
     },
     /**
      * SERVER SIDE CODE
@@ -64,7 +62,15 @@
         "postcss.config.js",
         "server/**/*.js"
       ],
-      "env": { "commonjs": true, "node": true }
+      "env": { "commonjs": true, "node": true },
+      "rules": {
+        "@typescript-eslint/no-unsafe-assignment": "off",
+        "@typescript-eslint/no-unsafe-member-access": "off",
+        "@typescript-eslint/no-unsafe-call": "off",
+        "@typescript-eslint/no-unsafe-return": "off",
+        "@typescript-eslint/no-var-requires": "off",
+        "@typescript-eslint/unbound-method": "off"
+      }
     },
     /**
      * TYPESCRIPT CODE
@@ -72,11 +78,11 @@
     {
       "files": ["{src,tests}/**/*.{ts,tsx}"],
       "extends": [
-        "prettier/@typescript-eslint",
         "plugin:@typescript-eslint/recommended",
         "plugin:@typescript-eslint/recommended-requiring-type-checking"
       ],
       "rules": {
+        // TODO: fix these one at a time
         "no-unused-vars": "off",
         "@typescript-eslint/no-unsafe-call": "off",
         "@typescript-eslint/restrict-template-expressions": "off",
