@@ -28,7 +28,10 @@ async function getJSON(input: RequestInfo, init?: RequestInit) {
  * @param path
  * @param init
  */
-export async function apiCall(path: string, init?: RequestInit) {
+export async function apiCall<T>(
+  path: string,
+  init?: RequestInit,
+): Promise<T> {
   let response;
   let json;
   try {
