@@ -1,0 +1,9 @@
+{
+  "extends": "@definitelytyped/dtslint/dtslint.json", // Or "dtslint/dt.json" if on DefinitelyTyped
+  "rules": {
+    "semicolon": false,
+    "indent": [true, "tabs"],
+    "no-relative-import-in-test": false,
+    "@typescript-eslint/no-unused-vars": false
+  }
+}

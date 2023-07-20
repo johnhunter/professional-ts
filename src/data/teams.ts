@@ -2,7 +2,7 @@ import type { ITeam } from '../types';
 import { apiCall } from '../utils/networking';
 import { assertIsTypedArray } from '../utils/assertions';
 
-function isITeam(arg: any): arg is ITeam {
+export function isITeam(arg: any): arg is ITeam {
   return (
     typeof arg.iconUrl === 'string' &&
     typeof arg.name === 'string' &&
